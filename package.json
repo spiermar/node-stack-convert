@@ -1,0 +1,28 @@
+{
+  "name": "perf-stack-convert",
+  "version": "0.1.0",
+  "description": "CLI tool to convert perf event stacks to json.",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spiermar/perf-stack-convert.git"
+  },
+  "keywords": [
+    "perf",
+    "stack",
+    "conversion",
+    "json"
+  ],
+  "author": "Martin Spier <spiermar@gmail.com> (http://overloaded.io/)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/spiermar/perf-stack-convert/issues"
+  },
+  "homepage": "https://github.com/spiermar/perf-stack-convert#readme",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}
