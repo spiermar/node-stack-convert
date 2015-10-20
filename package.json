@@ -1,5 +1,5 @@
 {
-  "name": "perf-stack-convert",
+  "name": "stack-convert",
   "version": "0.1.0",
   "description": "CLI tool to convert perf event stacks to json.",
   "main": "index.js",
@@ -22,6 +22,10 @@
     "url": "https://github.com/spiermar/perf-stack-convert/issues"
   },
   "homepage": "https://github.com/spiermar/perf-stack-convert#readme",
+  "preferGlobal": true,
+  "bin": {
+    "stackconvert": "index.js"
+  },
   "dependencies": {
     "commander": "^2.9.0"
   }
