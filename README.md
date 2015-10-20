@@ -1,5 +1,5 @@
 # stack-convert
-stackconvert is a CLI tool to convert folded event stacks to a json hierarchical data structure that can be consumed by [d3-flame-graph](https://github.com/spiermar/d3-flame-graph).
+stackconvert is a CLI tool to convert folded event stacks to a JSON hierarchical data structure that can be consumed by [d3-flame-graph](https://github.com/spiermar/d3-flame-graph).
 
 ## Getting Started
 
@@ -22,6 +22,10 @@ out.perf-folded is the folded event stack you want to convert
 -o out.json is the output file
 ```
 
+## Examples
+
+Input and Output examples can be found in the [examples](https://github.com/spiermar/node-stack-convert/tree/master/examples) directory.
+
 ## Issues
 
 For bugs, questions and discussions please use the [GitHub Issues](https://github.com/spiermar/d3-flame-graph/issues).
@@ -30,11 +34,11 @@ For bugs, questions and discussions please use the [GitHub Issues](https://githu
 
 We love contributions! But in order to avoid total chaos, we have a few guidelines.
 
-If you found a bug, have questions or feature requests, don't hesitate to open an [issue](https://github.com/spiermar/stack-convert/issues).
+If you found a bug, have questions or feature requests, don't hesitate to open an [issue](https://github.com/spiermar/node-stack-convert/issues).
 
 If you're working on an issue, please comment on it so we can assign you to it.
 
-If you have code to submit, follow the general pull request format. Fork the repo, make your changes, and submit a [pull request](https://github.com/spiermar/stack-convert/pulls).
+If you have code to submit, follow the general pull request format. Fork the repo, make your changes, and submit a [pull request](https://github.com/spiermar/node-stack-convert/pulls).
 
 ## License
 
