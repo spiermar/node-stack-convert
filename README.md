@@ -1,2 +1,2 @@
-# perf-stack-convert
+# stack-convert
 CLI tool to convert perf event stacks to json.
