@@ -23,23 +23,31 @@ Node.prototype.add = function(frames, value) {
   }
 }
 
+function convert(filename, options) {
+  fs.readFile(filename, 'utf8', function (err, data) {
+    if (err) throw err;
+    var root = new Node('root');
+    data.split("\n").map(function (val) {
+      var regex = /(.*) (.*)/g;
+      var matches = regex.exec(val);
+      if(matches) root.add(matches[1].split(";"), parseInt(matches[2]));
+    });
+    var json = JSON.stringify(root, null, 2);
+    if(options.output) {
+      fs.writeFile(options.output, json, function(err) {
+        if (err) throw err;
+      });
+    }
+    console.log(json);
+  });
+}
+
 program
   .version('0.1.0')
-  .option('-i, --input <filename>', 'Select input file.', null)
-  .option('-o, --output <filename>', 'Select output file.', null)
-  .parse(process.argv);
+  .arguments('<filename>')
+  .option('-o, --output <filename>', 'Save output to <filename>.')
+  .action(convert);
 
-if (!program.input) program.help(function(t) {
-  return '\n  Error: -i --input <filename> is required.\n' + t;
-});
+program.parse(process.argv);
 
-fs.readFile(program.input, 'utf8', function (err, data) {
-  if (err) throw err;
-  var root = new Node('root');
-  data.split("\n").map(function (val) {
-    var regex = /(.*) (.*)/g;
-    var matches = regex.exec(val);
-    if(matches) root.add(matches[1].split(";"), parseInt(matches[2]));
-  });
-  console.log(JSON.stringify(root, null, 2));
-});
+if(program.args.length < 1) program.help();
