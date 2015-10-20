@@ -37,8 +37,9 @@ function convert(filename, options) {
       fs.writeFile(options.output, json, function(err) {
         if (err) throw err;
       });
+    } else {
+      console.log(json);
     }
-    console.log(json);
   });
 }
 
