@@ -1,5 +1,5 @@
 # stack-convert
-stackconvert is a CLI tool to convert folded event stacks to a JSON hierarchical data structure that can be consumed by [d3-flame-graph](https://github.com/spiermar/d3-flame-graph).
+stackconvert is a CLI tool to convert perf record stacks to a JSON hierarchical data structure that can be consumed by [d3-flame-graph](https://github.com/spiermar/d3-flame-graph).
 
 ## Getting Started
 
