@@ -21,7 +21,7 @@ Where:
 perf.data is the output file from perf record you want to convert
 ```
 
-## Features
+## Options
 
 ### Collapsed/Folded Stacks
 

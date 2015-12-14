@@ -161,7 +161,7 @@ function folded(filename) {
 }
 
 program
-  .version('0.3.1')
+  .version('0.3.2')
   .arguments('<filename>')
   .option('-f, --folded', 'Input is a folded stack.')
   .option('-l, --live', 'Output includes a timestamp dimension for live flame graphs.')
