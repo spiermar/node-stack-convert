@@ -1,5 +1,5 @@
 # stack-convert
-stackconvert is a CLI tool to convert perf record stacks to a JSON hierarchical data structure that can be consumed by [d3-flame-graph](https://github.com/spiermar/d3-flame-graph).
+stackconvert is a CLI tool to convert perf script stacks to a JSON hierarchical data structure that can be consumed by [d3-flame-graph](https://github.com/spiermar/d3-flame-graph).
 
 ## Getting Started
 
@@ -12,13 +12,13 @@ $ npm install stack-convert -g
 Once the tool is installed, it can be used in the CLI.
 
 ```
-$ stackconvert perf.data > perf.json
+$ stackconvert perf.script.txt > perf.json
 ```
 
 Where:
 
 ```
-perf.data is the output file from perf record you want to convert
+perf.script.txt is the output file from perf script you want to convert
 ```
 
 ## Options
@@ -33,7 +33,7 @@ $ stackconvert --folded perf.data-folded > perf.json
 
 ### Live Flame Graphs
 
-The tool can be used to generate input for live flame graphs by adding a time dimension to the output. In this case, the input file must be the multiline perf record output, not the folded/collapsed stacks, since those do not contain timestamps.
+The tool can be used to generate input for live flame graphs by adding a time dimension to the output. In this case, the input file must be the multiline perf script output, not the folded/collapsed stacks, since those do not contain timestamps.
 
 ```
 $ stackconvert --live perf.data > perf.json
