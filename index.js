@@ -109,7 +109,7 @@ function raw(filename, live) {
     }
 
     for (var i = 0; i < lines.length; i++) {
-      re = /^(\S+\s*?\S*?)\s+(\d+)\/(\d+)\s+\[(\d+)\]\s+(\d+).(\d+)/g;
+      re = /^(\S+\s*?\S*?)\s+(\d+)[\/]?(\d*)\s+\[(\d+)\]\s+(\d+).(\d+)/g;
       matches = re.exec(lines[i]);
       if (matches) {
         if (live) {
