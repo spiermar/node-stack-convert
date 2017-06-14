@@ -100,6 +100,7 @@ function raw(filename, live) {
   fs.readFile(filename, 'utf8', function (err, data) {
     if (err) throw err;
     var lines = data.split("\n"),
+        inStack,
         profile,
         matches,
         re;
@@ -109,7 +110,7 @@ function raw(filename, live) {
     }
 
     for (var i = 0; i < lines.length; i++) {
-      re = /^(\S+\s*?\S*?)\s+(\d+)\/(\d+)\s+\[(\d+)\]\s+(\d+).(\d+)/g;
+      re = /^(\S+\s*?\S*?)\s+(\d+)[\/]?(\d*)\s+\[(\d+)\]\s+(\d+).(\d+)/g;
       matches = re.exec(lines[i]);
       if (matches) {
         if (live) {
@@ -121,11 +122,13 @@ function raw(filename, live) {
         matches = re.exec(lines[i]);
         if (matches) {
           profile.addFrame(matches[2], matches[3]);
+          inStack = true;
         } else {
           re = /^$/g;
           matches = re.exec(lines[i]);
-          if (matches) {
+          if (matches && inStack) {
             profile.closeStack();
+            inStack = false;
           } else {
             re = /^#/g;
             matches = re.exec(lines[i]);
